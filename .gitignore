@@ -1,0 +1,38 @@
+# Ignore compiled Python files
+*.pyc
+
+# Ignore virtual environment directory
+venv/
+
+# Ignore log files
+*.log
+
+# Ignore database file
+db.sqlite3
+
+# Ignore configuration files
+config.ini
+config.yml
+
+# Ignore Node.js modules
+node_modules/
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore JetBrains IDE files
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Ignore PyCharm IDE files
+*.pydevproject
+*.pyc
+*.pyo
+*.egg-info/
+bin/
+lib/
+.idea/
+.dbus/
+.dropbox
