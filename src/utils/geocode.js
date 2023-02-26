@@ -3,9 +3,7 @@ const { response } = require('express');
 const { get } = require('request');
 const key = process.env.APIKEY;
 
-async function getLocation(city, callback) {
-  console.log(key, city);
-
+async function getLocation(city) {
   const url =
     'http://api.openweathermap.org/geo/1.0/direct?q=' + city + '&appid=' + key;
 
@@ -21,12 +19,11 @@ async function getLocation(city, callback) {
     country: location['data'][0]['country'],
     state: location['data'][0]['state'],
   };
-  callback(undefined, response);
-  return 0;
+  return response;
 }
 
-getLocation('Hyderabad', (error, data) => {
-  console.log(data);
-});
+// getLocation('Hyderabad', (error, data) => {
+//   console.log(data);
+// });
 
 module.exports = getLocation;
