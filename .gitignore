@@ -17,6 +17,10 @@ config.yml
 # Ignore Node.js modules
 node_modules/
 
+# Ignore config modules
+config/
+
+
 # Ignore macOS system files
 .DS_Store
 

@@ -2,16 +2,15 @@ const express = require('express');
 const router = express.Router();
 const getForecast = require('../utils/forcast');
 const getLocation = require('../utils/geocode');
-const getNews = require('../utils/news');
+const { getNewsByQuery } = require('../utils/news');
 
-router.get('/weather/:city', async (req, res) => {
+router.get('/updates/:city', async (req, res) => {
+  console.log('Got a get Request on Updates!!!');
   city = req.params.city;
   try {
     let location = await getLocation(city);
     let weather = await getForecast([location['lat'], location['lon']]);
-    let news = await getNews([location['name']]);
-
-    console.log(location, weather, news);
+    let news = await getNewsByQuery([location['name']]);
 
     // Sending the response back to the request
     res.status(400).send({

@@ -4,10 +4,17 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
+app.get('', (req, res) => {
+  res.send(`Hello World!....
+  I'm KIWI, a news API that was developed by VINAY KISHORE`);
+});
+
 // Listening on all routers
-const Weather = require('./routers/weather');
-app.use(Weather);
-require('./utils/news');
+const Updates = require('./routers/updates');
+app.use(Updates);
+
+const News = require('./routers/news');
+app.use(News);
 
 // app.get('*', (req, res) => {
 //   res.status(404).send({
@@ -16,8 +23,6 @@ require('./utils/news');
 //     errorMessage: 'Article not found',
 //   });
 // });
-
-
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
