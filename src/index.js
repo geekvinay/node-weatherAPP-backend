@@ -5,6 +5,10 @@ require('./database/mongoose');
 
 app.use(express.json());
 
+// Check for authorization of the user
+const checkAuth = require('./auth/userAuth');
+app.get('/', checkAuth);
+
 app.get('', (req, res) => {
   res.send(`Hello World!....
   I'm KIWI, a news API that was developed by VINAY KISHORE`);
@@ -12,9 +16,9 @@ app.get('', (req, res) => {
 
 // Listening on all routers
 const Updates = require('./routers/updates');
-app.use(Updates);
-
 const News = require('./routers/news');
+
+app.use(Updates);
 app.use(News);
 
 // app.get('*', (req, res) => {

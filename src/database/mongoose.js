@@ -1,7 +1,7 @@
-const url = process.env.MONGODB_URL;
-const mongoose = require('mongoose');
+// const url = process.env.MONGODB_URL;
+// const mongoose = require('mongoose');
 
-mongoose.connect(url, {
-  useNewUrlParser: true,
-  useCreateIndex: true,
-});
+// mongoose.connect(url, {
+//   useNewUrlParser: true,
+//   useCreateIndex: true,
+// });
