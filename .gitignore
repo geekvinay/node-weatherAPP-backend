@@ -17,6 +17,9 @@ config.yml
 # Ignore Node.js modules
 node_modules/
 
+# Ignore dump modules
+dump/
+
 # Ignore config modules
 config/
 

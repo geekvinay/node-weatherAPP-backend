@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const auth = require('../auth/userAuth');
+const auth = require('./userAuth');
 const { createUserWithEmailAndPassword } = require('firebase/auth');
 
 router.post('/signup', async (req, res) => {
