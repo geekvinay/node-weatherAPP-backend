@@ -4,7 +4,7 @@ const getForecast = require('../utils/forcast');
 const getLocation = require('../utils/geocode');
 const { getNewsByQuery } = require('../utils/news');
 const dummyResponse = require('../../dump/dummy.json');
-const auth = require("../auth/admin")
+const auth = require("../middleware/auth")
 
 router.get('/updates/:city',auth, async (req, res) => {
   console.log('Got a get Request on Updates!!!');

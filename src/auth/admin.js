@@ -13,12 +13,4 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 const auth = getAuth(app)
 
-const verifyUserID = async () => {
-  let isVerified = await verifyIdToken(idToken)
-
-  console.log(isVerified)
-  if (isVerified) return true
-  else return false
-}
-
-module.exports = verifyUserID;
+module.exports = auth;
