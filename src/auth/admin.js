@@ -4,5 +4,3 @@ var serviceAccount = require('../../config/kiwi---weather-app-firebase-adminsdk-
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
 })
-
-module.exports = auth

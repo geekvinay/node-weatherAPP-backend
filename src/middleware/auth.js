@@ -1,7 +1,9 @@
 const { getAuth } = require('firebase-admin/auth')
+require('../auth/admin')
 
 function verifyID (req, res, next) {
-  let idToken = req.headers['authentication'].replace('Bearer ', '')
+  let idToken = req.headers['authentication']
+  idToken = idToken.replace('Bearer ', '')
   getAuth()
     .verifyIdToken(idToken)
     .then(decodedToken => {
