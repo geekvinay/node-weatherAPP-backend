@@ -1,16 +1,8 @@
-const {initializeApp, verifyIdToken} = require('firebase/app')
-const {getAuth} = require('firebase/auth')
+var admin = require('firebase-admin')
+var serviceAccount = require('../../config/kiwi---weather-app-firebase-adminsdk-lasmy-a504bb3a1b.json')
 
-const firebaseConfig = {
-  apiKey: 'AIzaSyBbLII28LSbOU5l_Bz3JMgSuBWAsyuYn04',
-  authDomain: 'kiwi---weather-app.firebaseapp.com',
-  projectId: 'kiwi---weather-app',
-  storageBucket: 'kiwi---weather-app.appspot.com',
-  messagingSenderId: '544896129238',
-  appId: '1:544896129238:web:95a4eabea1005e17ee9177'
-}
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+})
 
-const app = initializeApp(firebaseConfig)
-const auth = getAuth(app)
-
-module.exports = auth;
+module.exports = auth

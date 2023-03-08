@@ -9,7 +9,7 @@ async function getForecast([lat, lon]) {
       '&lon=' +
       lon +
       '&appid=' +
-      apiKey;
+      apiKey + '&units=metric';
 
     const weather = await axios({
       method: 'get',
